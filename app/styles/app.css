@@ -1,0 +1,17 @@
+.ember-application {
+  padding-left: 25%;
+  padding-right: 25%;
+}
+#my-table{
+  text-align: center;
+}
+h1 {
+  text-align: center;
+}
+
+
+#my-table th {
+  background-color: lightgrey;
+}
+
+

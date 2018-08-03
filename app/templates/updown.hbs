@@ -1,0 +1,27 @@
+<h1>Updown results</h1>
+{{outlet}}
+
+<div class="container" id="my-table">
+  <table class="table table-bordered table-hover">
+  <tr>
+    <th>Service</th>
+    <th>status</th>
+    <th>rolling uptime for last 30 days</th>
+  </tr>
+    {{#each model as |thing|}}
+        <tr>
+        <td><a href={{concat "http://www.updown.io/" thing.token}}><h4>{{thing.alias}}</h4> </a><br>{{description-appender thing.token}}</td>
+        <td>
+          {{#if thing.down}}
+            Down since: {{formatter thing.down_since}}
+          {{else}}
+          Up
+          {{/if}}
+
+        </td>
+        <td>{{thing.uptime}}%</td>
+      </tr>
+
+    {{/each}}
+  </table>
+</div>
